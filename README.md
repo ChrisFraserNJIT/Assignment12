@@ -65,5 +65,5 @@ Docker Hub Repository: https://hub.docker.com/repository/docker/chrisfraser286/m
 ## Reflection
 Developing this application provided hands-on experience with FastAPI, secure password handling using bcrypt, JWT authentication, Docker containerization, and CI/CD with GitHub Actions.
 
-Challenges included configuring bcrypt correctly to handle password length restrictions and ensuring all integration tests pass in the CI/CD workflow. Working through these challenges strengthened understanding of production-ready backend development, API design, testing, and deployment practices.
+Challenges included configuring bcrypt correctly to handle password length restrictions and ensuring all integration tests pass in the CI/CD workflow. Working through these challenges strengthened understanding of production-ready backend development, API design, testing, and deployment practices. Accidently made the access token for Docker Hub Read-Only which broke the github actions.
 
