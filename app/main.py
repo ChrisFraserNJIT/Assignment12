@@ -50,8 +50,8 @@ def register(user_create: UserCreate, db: Session = Depends(get_db)):
     user_data = user_create.dict(exclude={"confirm_password"})
     try:
         user = User.register(db, user_data)
-        db.commit()
-        db.refresh(user)
+        #db.commit()
+        #db.refresh(user)
         return user
     except ValueError as e:
         db.rollback()

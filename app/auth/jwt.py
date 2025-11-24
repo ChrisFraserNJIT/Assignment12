@@ -31,8 +31,11 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
     return pwd_context.verify(plain_password, hashed_password)
 
 def get_password_hash(password: str) -> str:
-    """Hash a password using bcrypt."""
-    return pwd_context.hash(password)
+    """Hash a password using bcrypt, truncated to 72 bytes to avoid errors."""
+    # Truncate to 72 bytes
+    truncated = password.encode("utf-8")[:72].decode("utf-8", "ignore")
+    return pwd_context.hash(truncated)
+
 
 def create_token(
     user_id: Union[str, UUID],

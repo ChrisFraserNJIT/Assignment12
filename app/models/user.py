@@ -137,6 +137,8 @@ class User(Base):
             is_verified=False
         )
         db.add(user)
+        db.commit()
+        db.refresh(user)
         return user
 
     @classmethod
